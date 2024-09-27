@@ -10,27 +10,27 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/public', express.static('public'));
 app.set('view engine', 'ejs');
 
-// //functions to save and get events
-// const getEvents = () => {
-//     const data = fs.readFileSync('./data/events.json','utf8');
-//     return JSON.parse(data);
-// };
+//functions to save and get events
+const getArtists = () => {
+    const data = fs.readFileSync('./db/artists.json','utf8');
+    return JSON.parse(data);
+};
 
-// const saveEvents = (events) => {
-//     fs.writeFileSync('./data/events.json', JSON.stringify(events, null, 2));
-// };
+const saveArtists = (events) => {
+    fs.writeFileSync('./db/artists.json', JSON.stringify(events, null, 2));
+};
 
-// //functions to save and get registrations
-// const getRegister = () => {
-//     const data = fs.readFileSync('./data/registrations.json','utf8');
-//     return JSON.parse(data);
-// };
+//functions to save and get registrations
+const getSongs = () => {
+    const data = fs.readFileSync('./db/songs.json','utf8');
+    return JSON.parse(data);
+};
 
-// const saveRegister = (registers) => {
-//     fs.writeFileSync('./data/registrations.json', JSON.stringify(registers, null, 2));
-// };
+const saveSongs = (registers) => {
+    fs.writeFileSync('./db/songs.json', JSON.stringify(registers, null, 2));
+};
 
-// //routes
+//routes
 
 // //index page
 // app.get('/', (req,res) => {
