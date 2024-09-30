@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="/public/css/styles.css">
+    <title>Admin Songs & Artists</title>
+</head>
+<body>
+    <!-- welcome text -->
+    <h1 class="headerText">Welcome to the Admin page</h1>
+    <!-- form on right side -->
+    <!-- <div class="form">
+        <form action="/events" method="POST">
+            <h1 class="header">Event Form</h1>
+            <input id="name" type="text" name="name" placeholder="New event name" required><br>
+            <input id="description" type="text" name="description" placeholder="New event description" required><br>
+            <input id="date" type="date" name="date" required><br>
+            <button onclick="validateForm();" class="formButton" type="submit">Add Event</button> 
+        </form>
+    </div> -->
+    <!-- table to display all events -->
+    <table class="content-table">
+        <thead>
+            <tr>
+                <th>Event</th>
+                <th>Description</th>
+                <th>Date</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% artists.forEach(function(artist) { %>
+            <tr class="active-row">
+                <th><%= artist.id %></th>
+                <th><%= artist.name %></th>
+                <th><%= artist.albums %></th>
+                <th><button class="adminButton"><a href="/edit/<%= artist.id %>/edit"><ion-icon name="create-outline"></ion-icon></a></button></th>
+                <th>
+                    <form action="/edit/<%= artist.id %>/delete" method="POST" style="display:inline;">
+                        <button onclick="deleteMessage();" class="adminButton" type="submit"><ion-icon name="trash-outline"></ion-icon></button>
+                    </form>
+                </th>
+            </tr>
+            <%});%>
+        </tbody>
+    </table>
+    <!-- ionicons scrips -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+        // function to send message when you delete
+        function deleteMessage(){
+            alert("Successfully deleted Event!")
+        }
+        // function to validate form and then send success message
+        function validateForm() {
+            const name = document.getElementById('name').value;
+            const description = document.getElementById('description').value;
+            const date = document.getElementById('date').value;
+            if (!name || !description || !date) {
+                alert('Please fill out all fields.');
+                return;
+            }
+            alert('Form submitted successfully!');
+        }
+    </script>
+</body>
+</html>

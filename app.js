@@ -16,7 +16,7 @@ const getArtists = () => {
     return JSON.parse(data);
 };
 
-const saveArtists = (events) => {
+const saveArtists = (artists) => {
     fs.writeFileSync('./db/artists.json', JSON.stringify(events, null, 2));
 };
 
@@ -26,41 +26,42 @@ const getSongs = () => {
     return JSON.parse(data);
 };
 
-const saveSongs = (registers) => {
+const saveSongs = (songs) => {
     fs.writeFileSync('./db/songs.json', JSON.stringify(registers, null, 2));
 };
 
 //routes
 
-// //index page
-// app.get('/', (req,res) => {
-//     const registers = getRegister();
-//     const events = getEvents();
-//     res.render('pages/index', { events, registers } );
-// });
+//index page
+app.get('/api/', (req,res) => {
+    const songs = getSongs();
+    const artists = getArtists();
+    res.render('index', { artists, songs } );
+});
 
-// //register page
-// app.get('/register', (req,res) => {
-//     const registers = getRegister();
-//     const events = getEvents();
-//     res.render('pages/register', { events, registers } );
-// });
+//register page
+app.get('/api/admin', (req,res) => {
+    const songs = getSongs();
+    const artists = getArtists();
+    res.render('admin', { artists, songs } );
+});
 
-// //POST
-// //adds event to the events.json
-// app.post('/events', (req,res) => {
-//     const events = getEvents();
-//     const newEvent = {
-//         id: events.length+1,
-//         name:req.body.name,
-//         date:req.body.date,
-//         description:req.body.description,
-//         attendees:0,
-//     };
-//     events.push(newEvent);
-//     saveEvents(events);
-//     res.redirect('/');
-// })
+//POST
+//WORK ON THIS NEXT
+//adds event to the events.json
+app.post('/api/admin', (req,res) => {
+    const events = getEvents();
+    const newEvent = {
+        id: events.length+1,
+        name:req.body.name,
+        date:req.body.date,
+        description:req.body.description,
+        attendees:0,
+    };
+    events.push(newEvent);
+    saveEvents(events);
+    res.redirect('/');
+});
 // //adds person who registered to registrations.json
 // app.post('/submit', (req,res) => {
 //     const registers = getRegister();

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="/public/css/styles.css">
+    <title>Songs & Artists</title>
+</head>
+<body>
+    <!-- welcome text -->
+    <h1 class="headerText">My Top 50 Favorite Artists and Their Best Song</h1>
+    <!-- table displaying songs and artists -->
+    <table class="content-table">
+        <thead>
+            <tr>
+                <th>Position</th>
+                <th>Artists</th>
+                <th>Studio Albums</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% artists.forEach(function(artist) { %>
+            <tr class="active-row">
+                <th><%= artist.id %></th>
+                <th><%= artist.name %></th>
+                <th><%= artist.albums %></th>
+            </tr>
+            <%});%>
+        </tbody>
+    </table>
+    <table class="content-table">
+        <thead>
+            <tr>
+                <th>Position</th>
+                <th>Best Song</th>
+                <th>Date Released</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% songs.forEach(function(song) { %>
+            <tr class="active-row">
+                <th><%= song.name %></th>
+                <th><%= song.most_popular_song %></th>
+                <th><%= song.release_year %></th>
+            </tr>
+            <%});%>
+        </tbody>
+    </table>
+</body>
+</html>
