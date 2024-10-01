@@ -46,6 +46,15 @@ app.get('/api/admin', (req,res) => {
     res.render('admin', { artists, songs } );
 });
 
+//GET to show a single artist/song
+app.get('/api/edit/:id/edit', (req,res) => {
+    const artists = getArtists();
+    const artist = artists.find(artist => artist.id == req.params.id);
+    const songs = getSongs();
+    const song = songs.find(song => song.id == req.params.id);
+    res.render('edit', { artist, song });
+});
+
 //POST
 //adds data to the artists.json and songs.json
 app.post('/addArtist', (req,res) => {
@@ -69,16 +78,7 @@ app.post('/addArtist', (req,res) => {
     res.redirect('/api/admin');
 });
 
-//GET to show a single event
-app.get('/edit/:id/edit', (req,res) => {
-    const artists = getArtists();
-    const artist = artists.find(artist => artist.id == req.params.id);
-    const songs = getSongs();
-    const song = songs.find(song => song.id == req.params.id);
-    res.render('edit', { artist, song });
-});
-
-//PUT to update event
+//PUT to update artist/song
 app.post('/artists/:id', (req,res) => {
     const artists = getArtists();
     const artistIndex = artists.findIndex(artist => artist.id == req.params.id);
@@ -94,7 +94,7 @@ app.post('/artists/:id', (req,res) => {
 });
 
 //DELETE
-app.post('/edit/:id/delete', (req,res) => {
+app.post('/api/edit/:id/delete', (req,res) => {
     let artists = getArtists();
     artists = artists.filter(artist => artist.id != req.params.id);
     saveArtists(artists);
@@ -103,6 +103,73 @@ app.post('/edit/:id/delete', (req,res) => {
     saveSongs(songs);
     res.redirect('/api/admin');
 });
+
+//api to return all artists
+app.get('/api/artists', (req, res) => {
+    const artists = getArtists();
+    const newArtists = artists.map(artist => {
+        const {id, name, albums} = artist;
+        return {id, name, albums};
+    })
+    res.json(newArtists);
+})
+
+//api to return all songs
+app.get('/api/songs', (req, res) => {
+    const songs = getSongs();
+    const newSongs = songs.map(song => {
+        const {id, name, most_popular_song, release_year} = song;
+        return {id, name, most_popular_song, release_year};
+    })
+    res.json(newSongs);
+})
+
+//I STILL NEED TO DO RELEASE YEAR AND
+
+//sets up a query that you can grab
+app.get('/api/artists/query', (req, res) => {
+    const artists = getArtists();
+    const {search, limit} = req.query
+    let sortedArtists = [...artists]
+
+    if(search){
+        sortedArtists = sortedArtists.filter((artist) => {
+            return artist.name.includes(search)
+        })
+    }
+    if(limit){
+        sortedArtists = sortedArtists.slice(0, Number(limit))
+    }
+    if(sortedArtists.length < 1){
+        return res.status(200).json({success:true,data:[]})
+    }
+    res.status(200).json(sortedArtists)
+})
+
+
+//query for finding artistID
+app.get('/api/artists/:artistID', (req, res) => {
+    const artists = getArtists();
+    const {artistID} = req.params;
+    const singleArtist = artists.find(artist => artist.id === Number(artistID));
+
+    if(!singleArtist){
+        return res.status(404).send('Artist not found/Artist does not exist')
+    }
+    return res.json(singleArtist)
+})
+
+//query for finding songID
+app.get('/api/songs/:songID', (req, res) => {
+    const songs = getSongs();
+    const {songID} = req.params;
+    const singleSong = songs.find(song => song.id === Number(songID));
+
+    if(!singleSong){
+        return res.status(404).send('Song not found/Song does not exist')
+    }
+    return res.json(singleSong)
+})
 
 //server
 app.listen(PORT, () => {

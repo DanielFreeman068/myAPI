@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Twenty One Pilots",
     "most_popular_song": "Stressed Out",
-    "release_year": 2015
+    "release_year": "2015"
   },
   {
     "id": 2,
@@ -303,7 +303,7 @@
     "id": 51,
     "name": "Dayglow",
     "most_popular_song": "Can I Call You Tonight",
-    "release_year": 2018
+    "release_year": "2018"
   },
   {
     "id": 52,
