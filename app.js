@@ -3,31 +3,31 @@ var express = require('express');
 var app = express();
 const fs = require('fs');
 const bodyParser = require('body-parser');
-const PORT = 3000;
+const PORT = 5100;
 
 //public folder css and middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/public', express.static('public'));
 app.set('view engine', 'ejs');
 
-//functions to save and get events
+//functions to save and get artists
 const getArtists = () => {
     const data = fs.readFileSync('./db/artists.json','utf8');
     return JSON.parse(data);
 };
 
 const saveArtists = (artists) => {
-    fs.writeFileSync('./db/artists.json', JSON.stringify(events, null, 2));
+    fs.writeFileSync('./db/artists.json', JSON.stringify(artists, null, 2));
 };
 
-//functions to save and get registrations
+//functions to save and get songs
 const getSongs = () => {
     const data = fs.readFileSync('./db/songs.json','utf8');
     return JSON.parse(data);
 };
 
 const saveSongs = (songs) => {
-    fs.writeFileSync('./db/songs.json', JSON.stringify(registers, null, 2));
+    fs.writeFileSync('./db/songs.json', JSON.stringify(songs, null, 2));
 };
 
 //routes
@@ -39,7 +39,7 @@ app.get('/api/', (req,res) => {
     res.render('index', { artists, songs } );
 });
 
-//register page
+//admin page
 app.get('/api/admin', (req,res) => {
     const songs = getSongs();
     const artists = getArtists();
@@ -47,59 +47,62 @@ app.get('/api/admin', (req,res) => {
 });
 
 //POST
-//WORK ON THIS NEXT
-//adds event to the events.json
-app.post('/api/admin', (req,res) => {
-    const events = getEvents();
-    const newEvent = {
-        id: events.length+1,
+//adds data to the artists.json and songs.json
+app.post('/addArtist', (req,res) => {
+    const artists = getArtists();
+    const songs = getSongs();
+    const newArtist = {
+        id: artists.length+1,
         name:req.body.name,
-        date:req.body.date,
-        description:req.body.description,
-        attendees:0,
+        albums:req.body.albums
     };
-    events.push(newEvent);
-    saveEvents(events);
-    res.redirect('/');
+    const newSong = {
+        id:songs.length+1,
+        name:req.body.name,
+        most_popular_song:req.body.best_song,
+        release_year:req.body.release_year
+    }
+    artists.push(newArtist);
+    songs.push(newSong)
+    saveArtists(artists);
+    saveSongs(songs);
+    res.redirect('/api/admin');
 });
-// //adds person who registered to registrations.json
-// app.post('/submit', (req,res) => {
-//     const registers = getRegister();
-//     const newRegister = {
-//         id: registers.length+1,
-//         name:req.body.name,
-//         email:req.body.email,
-//     };
-//     registers.push(newRegister);
-//     saveRegister(registers);
-//     res.redirect('/register');
-// })
 
-// //GET to show a single event
-// app.get('/events/:id/edit', (req,res) => {
-//     const events = getEvents();
-//     const event = events.find(event => event.id == req.params.id);
-//     res.render('pages/events', { event });
-// });
+//GET to show a single event
+app.get('/edit/:id/edit', (req,res) => {
+    const artists = getArtists();
+    const artist = artists.find(artist => artist.id == req.params.id);
+    const songs = getSongs();
+    const song = songs.find(song => song.id == req.params.id);
+    res.render('edit', { artist, song });
+});
 
-// //PUT to update event
-// app.post('/events/:id', (req,res) => {
-//     const events = getEvents();
-//     const eventIndex = events.findIndex(event => event.id == req.params.id);
-//     events[eventIndex].description = req.body.description;
-//     events[eventIndex].name = req.body.name;
-//     events[eventIndex].date = req.body.date;
-//     saveEvents(events);
-//     res.redirect('/');
-// });
+//PUT to update event
+app.post('/artists/:id', (req,res) => {
+    const artists = getArtists();
+    const artistIndex = artists.findIndex(artist => artist.id == req.params.id);
+    artists[artistIndex].name = req.body.name;
+    artists[artistIndex].albums = req.body.albums;
+    saveArtists(artists);
+    const songs = getSongs();
+    const songIndex = songs.findIndex(song => song.id == req.params.id);
+    songs[songIndex].most_popular_song = req.body.best_song;
+    songs[songIndex].release_year = req.body.release_year;
+    saveSongs(songs);
+    res.redirect('/api/admin');
+});
 
-// //DELETE
-// app.post('/events/:id/delete', (req,res) => {
-//     let events = getEvents();
-//     events = events.filter(event => event.id != req.params.id);
-//     saveEvents(events);
-//     res.redirect('/');
-// });
+//DELETE
+app.post('/edit/:id/delete', (req,res) => {
+    let artists = getArtists();
+    artists = artists.filter(artist => artist.id != req.params.id);
+    saveArtists(artists);
+    let songs = getSongs();
+    songs = songs.filter(song => song.id != req.params.id);
+    saveSongs(songs);
+    res.redirect('/api/admin');
+});
 
 //server
 app.listen(PORT, () => {

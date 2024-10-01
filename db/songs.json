@@ -1,52 +1,314 @@
 [
-    {"name": "Twenty One Pilots", "most_popular_song": "Stressed Out", "release_year": 2015},
-    {"name": "Imagine Dragons", "most_popular_song": "Believer", "release_year": 2017},
-    {"name": "Maroon 5", "most_popular_song": "Sugar", "release_year": 2014},
-    {"name": "Panic! At The Disco", "most_popular_song": "I Write Sins Not Tragedies", "release_year": 2005},
-    {"name": "Coldplay", "most_popular_song": "Viva La Vida", "release_year": 2008},
-    {"name": "The Weeknd", "most_popular_song": "Blinding Lights", "release_year": 2019},
-    {"name": "Taylor Swift", "most_popular_song": "Shake It Off", "release_year": 2014},
-    {"name": "Ed Sheeran", "most_popular_song": "Shape of You", "release_year": 2017},
-    {"name": "Dua Lipa", "most_popular_song": "Don't Start Now", "release_year": 2019},
-    {"name": "Katy Perry", "most_popular_song": "Firework", "release_year": 2010},
-    {"name": "Billie Eilish", "most_popular_song": "Bad Guy", "release_year": 2019},
-    {"name": "Adele", "most_popular_song": "Rolling in the Deep", "release_year": 2010},
-    {"name": "Bruno Mars", "most_popular_song": "Uptown Funk", "release_year": 2014},
-    {"name": "BTS", "most_popular_song": "Dynamite", "release_year": 2020},
-    {"name": "Rihanna", "most_popular_song": "Umbrella", "release_year": 2007},
-    {"name": "Post Malone", "most_popular_song": "Rockstar", "release_year": 2017},
-    {"name": "Halsey", "most_popular_song": "Without Me", "release_year": 2018},
-    {"name": "Sia", "most_popular_song": "Cheap Thrills", "release_year": 2016},
-    {"name": "Nick Jonas", "most_popular_song": "Jealous", "release_year": 2014},
-    {"name": "Shawn Mendes", "most_popular_song": "Stitches", "release_year": 2015},
-    {"name": "Camila Cabello", "most_popular_song": "Havana", "release_year": 2017},
-    {"name": "Lil Nas X", "most_popular_song": "Old Town Road", "release_year": 2019},
-    {"name": "Marshmello", "most_popular_song": "Happier", "release_year": 2018},
-    {"name": "Lady Gaga", "most_popular_song": "Bad Romance", "release_year": 2009},
-    {"name": "Selena Gomez", "most_popular_song": "Come & Get It", "release_year": 2013},
-    {"name": "Kendrick Lamar", "most_popular_song": "HUMBLE.", "release_year": 2017},
-    {"name": "J. Cole", "most_popular_song": "Middle Child", "release_year": 2019},
-    {"name": "Logic", "most_popular_song": "1-800-273-8255", "release_year": 2017},
-    {"name": "Miley Cyrus", "most_popular_song": "Wrecking Ball", "release_year": 2013},
-    {"name": "Linkin Park", "most_popular_song": "In the End", "release_year": 2000},
-    {"name": "Fall Out Boy", "most_popular_song": "Sugar, We're Goin Down", "release_year": 2005},
-    {"name": "Green Day", "most_popular_song": "Boulevard of Broken Dreams", "release_year": 2004},
-    {"name": "Paramore", "most_popular_song": "Misery Business", "release_year": 2007},
-    {"name": "My Chemical Romance", "most_popular_song": "Welcome to the Black Parade", "release_year": 2006},
-    {"name": "The Killers", "most_popular_song": "Mr. Brightside", "release_year": 2003},
-    {"name": "Foo Fighters", "most_popular_song": "Everlong", "release_year": 1997},
-    {"name": "The 1975", "most_popular_song": "Somebody Else", "release_year": 2016},
-    {"name": "Arctic Monkeys", "most_popular_song": "I Wanna Be Yours", "release_year": 2013},
-    {"name": "Dominik Fike", "most_popular_song": "3 Nights", "release_year": 2018},
-    {"name": "No Doubt", "most_popular_song": "Don't Speak", "release_year": 1996},
-    {"name": "Rage Against the Machine", "most_popular_song": "Killing in the Name", "release_year": 1992},
-    {"name": "The Lumineers", "most_popular_song": "Ho Hey", "release_year": 2012},
-    {"name": "Kings of Leon", "most_popular_song": "Use Somebody", "release_year": 2008},
-    {"name": "Weezer", "most_popular_song": "Buddy Holly", "release_year": 1994},
-    {"name": "Death Cab for Cutie", "most_popular_song": "I Will Follow You into the Dark", "release_year": 2005},
-    {"name": "Tame Impala", "most_popular_song": "The Less I Know The Better", "release_year": 2015},
-    {"name": "Vampire Weekend", "most_popular_song": "A-Punk", "release_year": 2008},
-    {"name": "The Chainsmokers", "most_popular_song": "Closer", "release_year": 2016},
-    {"name": "Zayn Malik", "most_popular_song": "Pillowtalk", "release_year": 2016},
-    {"name": "Alessia Cara", "most_popular_song": "Here", "release_year": 2015}
+  {
+    "id": 1,
+    "name": "Twenty One Pilots",
+    "most_popular_song": "Stressed Out",
+    "release_year": 2015
+  },
+  {
+    "id": 2,
+    "name": "Imagine Dragons",
+    "most_popular_song": "Believer",
+    "release_year": 2017
+  },
+  {
+    "id": 3,
+    "name": "Maroon 5",
+    "most_popular_song": "Sugar",
+    "release_year": 2014
+  },
+  {
+    "id": 4,
+    "name": "Panic! At The Disco",
+    "most_popular_song": "I Write Sins Not Tragedies",
+    "release_year": 2005
+  },
+  {
+    "id": 5,
+    "name": "Coldplay",
+    "most_popular_song": "Viva La Vida",
+    "release_year": 2008
+  },
+  {
+    "id": 6,
+    "name": "The Weeknd",
+    "most_popular_song": "Blinding Lights",
+    "release_year": 2019
+  },
+  {
+    "id": 7,
+    "name": "Taylor Swift",
+    "most_popular_song": "Shake It Off",
+    "release_year": 2014
+  },
+  {
+    "id": 8,
+    "name": "Ed Sheeran",
+    "most_popular_song": "Shape of You",
+    "release_year": 2017
+  },
+  {
+    "id": 9,
+    "name": "Dua Lipa",
+    "most_popular_song": "Don't Start Now",
+    "release_year": 2019
+  },
+  {
+    "id": 10,
+    "name": "Katy Perry",
+    "most_popular_song": "Firework",
+    "release_year": 2010
+  },
+  {
+    "id": 11,
+    "name": "Billie Eilish",
+    "most_popular_song": "Bad Guy",
+    "release_year": 2019
+  },
+  {
+    "id": 12,
+    "name": "Adele",
+    "most_popular_song": "Rolling in the Deep",
+    "release_year": 2010
+  },
+  {
+    "id": 13,
+    "name": "Bruno Mars",
+    "most_popular_song": "Uptown Funk",
+    "release_year": 2014
+  },
+  {
+    "id": 14,
+    "name": "BTS",
+    "most_popular_song": "Dynamite",
+    "release_year": 2020
+  },
+  {
+    "id": 15,
+    "name": "Rihanna",
+    "most_popular_song": "Umbrella",
+    "release_year": 2007
+  },
+  {
+    "id": 16,
+    "name": "Post Malone",
+    "most_popular_song": "Rockstar",
+    "release_year": 2017
+  },
+  {
+    "id": 17,
+    "name": "Halsey",
+    "most_popular_song": "Without Me",
+    "release_year": 2018
+  },
+  {
+    "id": 18,
+    "name": "Sia",
+    "most_popular_song": "Cheap Thrills",
+    "release_year": 2016
+  },
+  {
+    "id": 19,
+    "name": "Nick Jonas",
+    "most_popular_song": "Jealous",
+    "release_year": 2014
+  },
+  {
+    "id": 20,
+    "name": "Shawn Mendes",
+    "most_popular_song": "Stitches",
+    "release_year": 2015
+  },
+  {
+    "id": 21,
+    "name": "Camila Cabello",
+    "most_popular_song": "Havana",
+    "release_year": 2017
+  },
+  {
+    "id": 22,
+    "name": "Lil Nas X",
+    "most_popular_song": "Old Town Road",
+    "release_year": 2019
+  },
+  {
+    "id": 23,
+    "name": "Marshmello",
+    "most_popular_song": "Happier",
+    "release_year": 2018
+  },
+  {
+    "id": 24,
+    "name": "Lady Gaga",
+    "most_popular_song": "Bad Romance",
+    "release_year": 2009
+  },
+  {
+    "id": 25,
+    "name": "Selena Gomez",
+    "most_popular_song": "Come & Get It",
+    "release_year": 2013
+  },
+  {
+    "id": 26,
+    "name": "Kendrick Lamar",
+    "most_popular_song": "HUMBLE.",
+    "release_year": 2017
+  },
+  {
+    "id": 27,
+    "name": "J. Cole",
+    "most_popular_song": "Middle Child",
+    "release_year": 2019
+  },
+  {
+    "id": 28,
+    "name": "Logic",
+    "most_popular_song": "1-800-273-8255",
+    "release_year": 2017
+  },
+  {
+    "id": 29,
+    "name": "Miley Cyrus",
+    "most_popular_song": "Wrecking Ball",
+    "release_year": 2013
+  },
+  {
+    "id": 30,
+    "name": "Linkin Park",
+    "most_popular_song": "In the End",
+    "release_year": 2000
+  },
+  {
+    "id": 31,
+    "name": "Fall Out Boy",
+    "most_popular_song": "Sugar, We're Goin Down",
+    "release_year": 2005
+  },
+  {
+    "id": 32,
+    "name": "Green Day",
+    "most_popular_song": "Boulevard of Broken Dreams",
+    "release_year": 2004
+  },
+  {
+    "id": 33,
+    "name": "Paramore",
+    "most_popular_song": "Misery Business",
+    "release_year": 2007
+  },
+  {
+    "id": 34,
+    "name": "My Chemical Romance",
+    "most_popular_song": "Welcome to the Black Parade",
+    "release_year": 2006
+  },
+  {
+    "id": 35,
+    "name": "The Killers",
+    "most_popular_song": "Mr. Brightside",
+    "release_year": 2003
+  },
+  {
+    "id": 36,
+    "name": "Foo Fighters",
+    "most_popular_song": "Everlong",
+    "release_year": 1997
+  },
+  {
+    "id": 37,
+    "name": "The 1975",
+    "most_popular_song": "Somebody Else",
+    "release_year": 2016
+  },
+  {
+    "id": 38,
+    "name": "Arctic Monkeys",
+    "most_popular_song": "I Wanna Be Yours",
+    "release_year": 2013
+  },
+  {
+    "id": 39,
+    "name": "Dominik Fike",
+    "most_popular_song": "3 Nights",
+    "release_year": 2018
+  },
+  {
+    "id": 40,
+    "name": "No Doubt",
+    "most_popular_song": "Don't Speak",
+    "release_year": 1996
+  },
+  {
+    "id": 41,
+    "name": "Rage Against the Machine",
+    "most_popular_song": "Killing in the Name",
+    "release_year": 1992
+  },
+  {
+    "id": 42,
+    "name": "The Lumineers",
+    "most_popular_song": "Ho Hey",
+    "release_year": 2012
+  },
+  {
+    "id": 43,
+    "name": "Kings of Leon",
+    "most_popular_song": "Use Somebody",
+    "release_year": 2008
+  },
+  {
+    "id": 44,
+    "name": "Weezer",
+    "most_popular_song": "Buddy Holly",
+    "release_year": 1994
+  },
+  {
+    "id": 45,
+    "name": "Death Cab for Cutie",
+    "most_popular_song": "I Will Follow You into the Dark",
+    "release_year": 2005
+  },
+  {
+    "id": 46,
+    "name": "Tame Impala",
+    "most_popular_song": "The Less I Know The Better",
+    "release_year": 2015
+  },
+  {
+    "id": 47,
+    "name": "Vampire Weekend",
+    "most_popular_song": "A-Punk",
+    "release_year": 2008
+  },
+  {
+    "id": 48,
+    "name": "The Chainsmokers",
+    "most_popular_song": "Closer",
+    "release_year": 2016
+  },
+  {
+    "id": 49,
+    "name": "Zayn Malik",
+    "most_popular_song": "Pillowtalk",
+    "release_year": 2016
+  },
+  {
+    "id": 50,
+    "name": "Alessia Cara",
+    "most_popular_song": "Here",
+    "release_year": 2015
+  },
+  {
+    "id": 51,
+    "name": "Dayglow",
+    "most_popular_song": "Can I Call You Tonight",
+    "release_year": 2018
+  },
+  {
+    "id": 52,
+    "name": "Two Door Cinema Club",
+    "most_popular_song": "What You Know",
+    "release_year": "2010"
+  }
 ]
