@@ -124,26 +124,42 @@ app.get('/api/songs', (req, res) => {
     res.json(newSongs);
 })
 
-//I STILL NEED TO DO RELEASE YEAR AND
-
-//sets up a query that you can grab
+//query to get number of albums and/or name of artist under all artists
 app.get('/api/artists/query', (req, res) => {
     const artists = getArtists();
-    const {search, limit} = req.query
+    const {nameSearch, albums} = req.query
     let sortedArtists = [...artists]
 
-    if(search){
+    if(nameSearch){
         sortedArtists = sortedArtists.filter((artist) => {
-            return artist.name.includes(search)
+            return artist.name.toLowerCase().includes(nameSearch.toLowerCase());
+        })
+    }   
+    if(albums){
+        sortedArtists = sortedArtists.filter((artist) => {
+            return artist.albums == Number(albums);
         })
     }
-    if(limit){
-        sortedArtists = sortedArtists.slice(0, Number(limit))
-    }
     if(sortedArtists.length < 1){
-        return res.status(200).json({success:true,data:[]})
+        return res.status(200).json("No results matching your query")
     }
     res.status(200).json(sortedArtists)
+})
+//query for finding release dates under songs
+app.get('/api/songs/query', (req, res) => {
+    const songs = getSongs();
+    const {year} = req.query
+    let sortedSongs = [...songs]
+
+    if(year){
+        sortedSongs = sortedSongs.filter((song) => {
+            return Number(song.release_year) === Number(year);
+        });
+    }
+    if(sortedArtists.length < 1){
+        return res.status(200).json("No results matching your query")
+    }
+    res.status(200).json(sortedSongs)
 })
 
 
