@@ -11,7 +11,7 @@
     <header>
         <h1 class="headerText">Welcome to the Admin page</h1>
         <h5>Here you can scroll through the list of songs, edit, delete, and of course add new ones if desired</h5>
-        <button><a href="#form">Jump to Form</a></button>
+        <button class="button-23" role="button"><a href="#form">Jump to Form</a></button>
     </header>
     <!-- table to display all artists -->
         <table class="content-table">
@@ -38,43 +38,22 @@
                 <%});%>
             </tbody>
         </table>
-        <!-- table to display all songs -->
-        <table class="content-table-2">
-            <thead>
-                <tr>
-                    <th>Best Song</th>
-                    <th>Release Date</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% songs.forEach(function(song) { %>
-                <tr class="active-row">
-                    <th><%= song.most_popular_song %></th>
-                    <th><%= song.release_year %></th>
-                </tr>
-                <%});%>
-            </tbody>
-        </table>
-        <!-- form -->
-        <div id="form" class="form">
-            <form action="/addArtist" method="POST">
-                <h1 class="header">Artist Form</h1>
-                
-                <label for="name">Artist Name:</label>
-                <input id="name" type="text" name="name" placeholder="New Artist" required><br>
-                
-                <label for="albums">Number of Albums:</label>
-                <input id="albums" type="number" name="albums" placeholder="Number of Albums" required><br>
-                
-                <label for="best_song">Best Song:</label>
-                <input type="text" name="best_song" id="best_song" placeholder="Best Song" required><br>
-                
-                <label for="release_year">Release Year:</label>
-                <input type="number" name="release_year" id="release_year" placeholder="2000" required><br>
-    
-                <button class="formButton" type="submit">Submit</button> 
-            </form>
-        </div>
+        <form id="form" action="/addArtist" method="POST" class="form">
+            <h1>Add Artist</h1>
+            <input type="text" placeholder="New Artist" class="form__input" id="name" name="name" required />
+            <label for="name" class="form__label">Artist Name</label>
+        
+            <input type="number" placeholder="Number of Albums" class="form__input" id="albums" name="albums" required />
+            <label for="albums" class="form__label">Number of Albums</label>
+        
+            <input type="text" placeholder="Best Song" class="form__input" id="best_song" name="best_song" required />
+            <label for="best_song" class="form__label">Best Song</label>
+        
+            <input type="number" placeholder="2000" class="form__input" id="release_year" name="release_year" required />
+            <label for="release_year" class="form__label">Release Year</label>
+        
+            <button class="button-23" type="submit">Submit</button>
+        </form>
     <!-- ionicons scrips -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

@@ -316,5 +316,11 @@
     "name": "Cage The Elephant",
     "most_popular_song": "Cigarette Daydreams",
     "release_year": "2013"
+  },
+  {
+    "id": 54,
+    "name": "Djo",
+    "most_popular_song": "End Of Beginning",
+    "release_year": "2022"
   }
 ]
