@@ -1,0 +1,127 @@
+/* general styling for page */
+body {
+    background-color: #B1BACA;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+* {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+header {
+    text-align: center;
+    margin-top: 5rem;
+}
+
+/* table css */
+.content-table {
+    border-collapse: collapse;
+    font-size: 1em;
+    min-width: 48%;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    max-width: 48%;
+    margin-top: 5rem;
+    float:left;
+    margin-left:2rem;
+}
+.content-table thead tr {
+    background-color: #1D3B28;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+    height: 70px;
+}
+.content-table th,
+.content-table td {
+    padding: 12px 15px;
+    text-align: left;
+}
+.content-table th {
+    max-width: 300px;
+    overflow-wrap: break-word;
+}
+.content-table tbody tr {
+    height: 50px;
+}
+.content-table tbody tr:hover {
+    color: #1D3B28;
+}
+.content-table tbody tr {
+    border-bottom: 1px solid #B1BACA;
+}
+.content-table tbody tr:nth-child(even) {
+    background-color: #CADEED;
+}
+.content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #1D3B28;
+}
+
+/* table 2 css */
+.content-table-2 {
+    border-collapse: collapse;
+    font-size: 1em;
+    min-width: 48%;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    max-width: 48%;
+    margin-top: 5rem;
+    float:right;
+    margin-right:2rem;
+}
+.content-table-2 thead tr {
+    background-color: #1D3B28;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+    height: 70px;
+}
+.content-table-2 th,
+.content-table-2 td {
+    padding: 12px 15px;
+    text-align: left;
+}
+.content-table-2 th {
+    max-width: 300px;
+    overflow-wrap: break-word;
+}
+.content-table-2 tbody tr {
+    height: 56.5px;
+}
+.content-table-2 tbody tr:hover {
+    color: #1D3B28;
+}
+.content-table-2 tbody tr {
+    border-bottom: 1px solid #B1BACA;
+}
+.content-table-2 tbody tr:nth-child(even) {
+    background-color: #CADEED;
+}
+.content-table-2 tbody tr:last-of-type {
+    border-bottom: 2px solid #1D3B28;
+}
+
+/* edit and delete icons */
+ion-icon {
+    color: black;
+    width: 20px;
+    height: 25px;
+}
+.adminButton {
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid transparent;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.adminButton:hover {
+    background-color: rgb(233, 230, 230);
+}
