@@ -8,55 +8,137 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <header>
         <h1>Songs and Artists</h1>
         <h3>API</h3>
     </header>
-    <div class="apiContainer">
+    <div data-aos="zoom-in" class="apiContainer">
         <h1 class="exampleHeadTop">Display All Artists:</h1>
         <div class="example">
             <p class="exampleText">http://localhost:5100/api/artists</p>
         </div>
-        <h1 class="exampleFoot">Add <span>"artists"</span> as a GET parameter to display all of the artists and their data</h1>
+        <h1 class="exampleFoot">Add <span><i>"artists"</i></span> as a GET parameter to display all of the artists and their data</h1>
         <h1 class="exampleHead">Response:</h1>
         <div class="example">
             <p class="exampleText">[{"id":1,"name":"Twenty One Pilots","albums":"7"},{"id":2,"name":"Imagine Dragons","albums":6}, ...etc]</p>
         </div>
     </div>
-    <div class="apiContainer">
+    <div data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000" class="apiContainer">
         <h1 class="exampleHeadTop">Display All Songs:</h1>
         <div class="example">
             <p class="exampleText">http://localhost:5100/api/songs</p>
         </div>
-        <h1 class="exampleFoot">Add <span>"songs"</span> as a GET parameter to display all of the songs and their data</h1>
+        <h1 class="exampleFoot">Add <span><i>"songs"</i></span> as a GET parameter to display all of the songs and their data</h1>
         <h1 class="exampleHead">Response:</h1>
         <div class="example">
             <p class="exampleText">[{"id":1,"name":"Twenty One Pilots","most_popular_song":"Stressed Out","release_year":"2015"},{"id":2,"name":"Imagine Dragons","most_popular_song":"Believer","release_year":"2017"}, ...etc</p>
         </div>
     </div>
-    <div class="apiContainer">
+    <div data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000" class="apiContainer">
         <h1 class="exampleHeadTop">Searches Artist By Id:</h1>
         <div class="example">
             <p class="exampleText">http://localhost:5100/api/artists/1</p>
         </div>
-        <h1 class="exampleFoot">Add a number such as <span>"1"</span> as a parameter to search and find the artist matching the given ID</h1>
+        <h1 class="exampleFoot">Add a number such as <span><i>"1"</i></span> as a parameter to search and find the artist matching the given ID</h1>
         <h1 class="exampleHead">Response:</h1>
         <div class="example">
             <p class="exampleText">{"id":1,"name":"Twenty One Pilots","albums":"7"}</p>
         </div>
     </div>
-    <div class="apiContainer">
+    <div data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000" class="apiContainer">
         <h1 class="exampleHeadTop">Searches Song By Id:</h1>
         <div class="example">
             <p class="exampleText">http://localhost:5100/api/song/1</p>
         </div>
-        <h1 class="exampleFoot">Add a number such as <span>"1"</span> as a parameter to search and find the song matching the given ID</h1>
+        <h1 class="exampleFoot">Add a number such as <span><i>"1"</i></span> as a parameter to search and find the song matching the given ID</h1>
         <h1 class="exampleHead">Response:</h1>
         <div class="example">
             <p class="exampleText">{"id":1,"name":"Twenty One Pilots","most_popular_song":"Stressed Out","release_year":"2015"}</p>
         </div>
     </div>
+    <div data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000" class="apiContainer">
+        <h1 class="exampleHeadTop">Searches Artists by Name:</h1>
+        <div class="example">
+            <p class="exampleText">http://localhost:5100/api/artists/query?nameSearch=Twenty</p>
+        </div>
+        <h1 class="exampleFoot">Add a query such as <span><i>"query?nameSearch=Twenty"</i></span> as a query to search <br> and find the artist matching the given name</h1>
+        <h1 class="exampleHead">Response:</h1>
+        <div class="example">
+            <p class="exampleText">[{"id":1,"name":"Twenty One Pilots","albums":"7"}]</p>
+        </div>
+    </div>
+    <div data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000" class="apiContainer">
+        <h1 class="exampleHeadTop">Searches Artists by the Amount of Albums:</h1>
+        <div class="example">
+            <p class="exampleText">http://localhost:5100/api/artists/query?albums=15</p>
+        </div>
+        <h1 class="exampleFoot">Add a query such as <span><i>"query?albums=15"</i></span> as a query to search and find the artist <br> matching the amount of albums</h1>
+        <h1 class="exampleHead">Response:</h1>
+        <div class="example">
+            <p class="exampleText">[{"id":44,"name":"Weezer","albums":15}]</p>
+        </div>
+    </div>
+    <div data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000" class="apiContainer">
+        <h1 class="exampleHeadTop">Searches Artists by Name and Albums:</h1>
+        <div class="example">
+            <p class="exampleText">http://localhost:5100/api/artists/query?nameSearch=D&albums=4</p>
+        </div>
+        <h1 class="exampleFoot">Add two queries by using the & symbol to separate each one such as <span><i>"query?nameSearch=D&albums=4"</i></span> <br> to search and find the artist matching both the given name and album count</h1>
+        <h1 class="exampleHead">Response:</h1>
+        <div class="example">
+            <p class="exampleText">[{"id":12,"name":"Adele","albums":4},{"id":20,"name":"Shawn Mendes","albums":4},{"id":51,"name":"Dayglow","albums":"4"}]</p>
+        </div>
+    </div>
+    <div data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000" class="apiContainer">
+        <h1 class="exampleHeadTop">Searches Songs by Artist Name:</h1>
+        <div class="example">
+            <p class="exampleText">http://localhost:5100/api/songs/query?nameSearch=Twenty%20one%20pilots</p>
+        </div>
+        <h1 class="exampleFoot">Add a query such as <span><i>"query?nameSearch=Twenty%20one%20pilots"</i></span> as a query to search and find the song made by the artist name matching the given name</h1>
+        <h1 class="exampleHead">Response:</h1>
+        <div class="example">
+            <p class="exampleText">[{"id":1,"name":"Twenty One Pilots","most_popular_song":"Stressed Out","release_year":"2015"}]</p>
+        </div>
+    </div>
+    <div data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000" class="apiContainer">
+        <h1 class="exampleHeadTop">Searches Songs by Song Name:</h1>
+        <div class="example">
+            <p class="exampleText">http://localhost:5100/api/songs/query?songName=Shake%20it%20off</p>
+        </div>
+        <h1 class="exampleFoot">Add a query such as <span><i>"query?songName=Shake%20it%20off"</i></span> to search and find the song matching the given song name</h1>
+        <h1 class="exampleHead">Response:</h1>
+        <div class="example">
+            <p class="exampleText">[{"id":7,"name":"Taylor Swift","most_popular_song":"Shake It Off","release_year":"2014"}]</p>
+        </div>
+    </div>
+    <div data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000" class="apiContainer">
+        <h1 class="exampleHeadTop">Searches Songs by Release Date:</h1>
+        <div class="example">
+            <p class="exampleText">http://localhost:5100/api/songs/query?year=2020</p>
+        </div>
+        <h1 class="exampleFoot">Add a year such as <span><i>"query?year=2020"</i></span> as a query to search and find the song matching the given release year</h1>
+        <h1 class="exampleHead">Response:</h1>
+        <div class="example">
+            <p class="exampleText">[{"id":1,"name":"Twenty One Pilots","most_popular_song":"Stressed Out","release_year":"2015"}]</p>
+        </div>
+    </div>
+    <div data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000" class="apiContainer">
+        <h1 class="exampleHeadTop">Searches Songs by Name, Song Name, and Release Year:</h1>
+        <div class="example">
+            <p class="exampleText">http://localhost:5100/api/songs/query?nameSearch=d&songName=p&year=2017</p>
+        </div>
+        <h1 class="exampleFoot">Add more than one query by using the & symbol to separate each one such as <span><i>"query?nameSearch=d&songName=p&year=2017"</i></span> <br> to search and find the song matching all queries given</h1>
+        <h1 class="exampleHead">Response:</h1>
+        <div class="example">
+            <p class="exampleText">[{"id":8,"name":"Ed Sheeran","most_popular_song":"Shape of You","release_year":"2017"}]</p>
+        </div>
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>

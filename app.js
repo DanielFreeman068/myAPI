@@ -149,14 +149,19 @@ app.get('/api/artists/query', (req, res) => {
 //query for finding release dates and band/artist names under songs
 app.get('/api/songs/query', (req, res) => {
     const songs = getSongs();
-    const {nameSearch, year} = req.query
+    const {nameSearch, songName, year} = req.query
     let sortedSongs = [...songs]
 
     if(nameSearch){
         sortedSongs = sortedSongs.filter((song) => {
             return song.name.toLowerCase().includes(nameSearch.toLowerCase());
         })
-    } 
+    }
+    if(songName){
+        sortedSongs = sortedSongs.filter((song) => {
+            return song.most_popular_song.toLowerCase().includes(songName.toLowerCase());
+        });
+    }
     if(year){
         sortedSongs = sortedSongs.filter((song) => {
             return Number(song.release_year) === Number(year);
