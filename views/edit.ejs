@@ -7,28 +7,28 @@
     <title>Edit</title>
 </head>
 <body>
-    <!-- welcome text -->
-    <h1 class="headerText">Edit Music</h1>
     <!-- form to edit -->
     <div class="formEdit">
-        <form action="/artists/<%= artist.id %>" method="POST">
-            <label for="name">Artist Name:</label>
-            <input id="name" type="text" name="name" value="<%= artist.name %>" required><br>
+        <form id="form" action="/artists/<%= artist.id %>" method="POST" class="form">
+            <h1>Edit Data</h1>
             
-            <label for="albums">Number of Albums:</label>
-            <input id="albums" type="number" name="albums" value="<%= artist.albums %>" required><br>
+            <input type="text" placeholder="Artist Name" class="form__input" id="name" name="name" value="<%= artist.name %>" required />
+            <label for="name" class="form__label">Artist Name</label>
             
-            <label for="best_song">Best Song:</label>
-            <input type="text" name="best_song" id="best_song" value="<%= song.most_popular_song %>" required><br>
+            <input type="number" placeholder="Number of Albums" class="form__input" id="albums" name="albums" value="<%= artist.albums %>" required />
+            <label for="albums" class="form__label">Number of Albums</label>
             
-            <label for="release_year">Release Year:</label>
-            <input type="number" name="release_year" id="release_year" value="<%= song.release_year %>" required><br>
+            <input type="text" placeholder="Best Song" class="form__input" id="best_song" name="best_song" value="<%= song.most_popular_song %>" required />
+            <label for="best_song" class="form__label">Best Song</label>
             
-            <button class="formButton" type="submit">Submit</button> 
+            <input type="number" placeholder="Release Year" class="form__input" id="release_year" name="release_year" value="<%= song.release_year %>" required />
+            <label for="release_year" class="form__label">Release Year</label>
+            
+            <button class="button-23" type="submit">Submit</button>
         </form>
         <!-- hyperlink back to index page -->
         <a class="exit" href="/api/admin"><ion-icon class="ion" name="exit-outline"></ion-icon></a>
-    </div>
+    </div>    
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

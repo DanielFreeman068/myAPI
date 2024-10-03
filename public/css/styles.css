@@ -27,7 +27,7 @@ header h3 {
     font-size:30px;
 }
 
-/* index styling for api */
+/* index styling for api / documentation page */
 span{
     font-size: 30px;
 }
@@ -225,20 +225,17 @@ ion-icon {
     }
 }
 
-/* Focus styles for input fields */
 .form__input:focus {
     outline: none;
     border-top-color: rgba(0, 0, 0, 0.1);
 }
 
-/* Label styling and interaction with input fields */
 .form__input:focus + .form__label,
 .form__input:not(:placeholder-shown) + .form__label {
     transform: translateY(-4.50rem) scale(1);
     color: black;
 }
 
-/* Placeholder styling */
 .form__input::placeholder {
     display: none;
     color: transparent;
@@ -247,7 +244,6 @@ ion-icon {
     user-select: none;
 }
 
-/* Input styling when not showing placeholder */
 .form__input:not(:placeholder-shown) {
     border-top-color: rgba(0, 0, 0, 0.5);
 }
@@ -265,4 +261,3 @@ ion-icon {
     user-select: none;
     pointer-events: none; 
 }
-

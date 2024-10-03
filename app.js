@@ -146,7 +146,7 @@ app.get('/api/artists/query', (req, res) => {
     res.status(200).json(sortedArtists)
 })
 
-//query for finding release dates and band/artist names under songs
+//query for finding release dates and band/artist name, song name, and release year under songs
 app.get('/api/songs/query', (req, res) => {
     const songs = getSongs();
     const {nameSearch, songName, year} = req.query
@@ -180,7 +180,7 @@ app.get('/api/artists/:artistID', (req, res) => {
     const singleArtist = artists.find(artist => artist.id === Number(artistID));
 
     if(!singleArtist){
-        return res.status(404).send('Artist not found/Artist does not exist')
+        return res.status(404).send('No artist matching this ID')
     }
     return res.json(singleArtist)
 })
@@ -192,7 +192,7 @@ app.get('/api/songs/:songID', (req, res) => {
     const singleSong = songs.find(song => song.id === Number(songID));
 
     if(!singleSong){
-        return res.status(404).send('Song not found/Song does not exist')
+        return res.status(404).send('No song matching this ID')
     }
     return res.json(singleSong)
 })
