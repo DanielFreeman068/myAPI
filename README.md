@@ -15,6 +15,8 @@ node app.js
 ```
 Then navigate to http://localhost:5100/api
 
+For admin use /api/admin
+
 ## Libraries
 ```bash
 var express = require('express');
