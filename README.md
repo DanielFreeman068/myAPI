@@ -23,3 +23,10 @@ const fs = require('fs');
 const bodyParser = require('body-parser');
 const PORT = 5100;
 ```
+- [@DanielFreeman068](https://github.com/DanielFreeman068)
+
+## License
+
+**This project uses the MIT License**
+
+[MIT License](https://choosealicense.com/licenses/mit/)
