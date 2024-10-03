@@ -23,6 +23,8 @@ const fs = require('fs');
 const bodyParser = require('body-parser');
 const PORT = 5100;
 ```
+
+## Authors
 - [@DanielFreeman068](https://github.com/DanielFreeman068)
 
 ## License
