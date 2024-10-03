@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap');
+
 /* general styling for page */
 body {
     background-color: #B1BACA;
@@ -6,7 +8,7 @@ body {
     padding: 0;
 }
 * {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: "Gowun Batang"
 }
 html {
     scroll-behavior: smooth;
@@ -16,6 +18,71 @@ header {
     text-align: center;
     margin-top: 5rem;
 }
+
+header h1 {
+    font-size:60px;
+}
+
+header h3 {
+    font-size:30px;
+}
+
+/* index styling for api */
+span{
+    font-size: 30px;
+    font-family:monospace;
+}
+
+.apiContainer {
+    background-color: rgba(29, 59, 40, 0.5);
+    backdrop-filter: blur(20px);
+    margin-right:auto;
+    margin-left:auto;
+    border-radius: 25px;
+    max-width: 80%;
+    padding: 5px 0;
+    margin-top:3rem;
+}
+
+.exampleHead {
+    margin-left:10rem;
+        color:#ffffff;
+    text-shadow: 2px 2px 5px #000000;
+}
+
+.exampleHeadTop {
+    margin-left:10rem;
+    margin-top:3rem;
+    color:#ffffff;
+    text-shadow: 2px 2px 5px #000000;
+}
+
+.exampleFoot{
+    font-size:20px;
+    text-align: center;
+    color:#ffffff;
+    text-shadow: 2px 2px 5px #000000;
+}
+
+.example {
+    margin: 3rem auto;
+    text-align: center;
+    align-self: center;
+    max-width: 75%;
+    background-color: rgba(177, 186, 202, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(179, 170, 170, 0.1);
+}
+
+.exampleText {
+    font-size:25px;
+    color:#ffffff;
+    text-shadow: 2px 2px 5px #000000;
+}
+
 
 /* table css */
 .content-table {
@@ -199,3 +266,4 @@ ion-icon {
     user-select: none;
     pointer-events: none; 
 }
+

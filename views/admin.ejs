@@ -30,7 +30,7 @@
                     <th><%= artist.albums %></th>
                     <th><button class="adminButton"><a href="/api/edit/<%= artist.id %>/edit"><ion-icon name="create-outline"></ion-icon></a></button></th>
                     <th>
-                        <form action="/edit/<%= artist.id %>/delete" method="POST" style="display:inline;">
+                        <form action="/api/edit/<%= artist.id %>/delete" method="POST" style="display:inline;">
                             <button class="adminButton" type="submit"><ion-icon name="trash-outline"></ion-icon></button>
                         </form>
                     </th>

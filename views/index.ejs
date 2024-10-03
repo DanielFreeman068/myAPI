@@ -4,8 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" rel="stylesheet" href="/public/css/styles.css">
-    <title>Songs & Artists</title>
+    <title>Songs & Artists API</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap" rel="stylesheet">
 </head>
 <body>
+    <header>
+        <h1>Songs and Artists</h1>
+        <h3>API</h3>
+    </header>
+    <div class="apiContainer">
+        <h1 class="exampleHeadTop">Display All Artists:</h1>
+        <div class="example">
+            <p class="exampleText">http://localhost:5100/api/artists</p>
+        </div>
+        <h1 class="exampleFoot">Add <span>"artists"</span> as a GET parameter to display all of the artists and their data</h1>
+        <h1 class="exampleHead">Response:</h1>
+        <div class="example">
+            <p class="exampleText">[{"id":1,"name":"Twenty One Pilots","albums":"7"},{"id":2,"name":"Imagine Dragons","albums":6}, ...etc]</p>
+        </div>
+    </div>
+    <div class="apiContainer">
+        <h1 class="exampleHeadTop">Display All Songs:</h1>
+        <div class="example">
+            <p class="exampleText">http://localhost:5100/api/songs</p>
+        </div>
+        <h1 class="exampleFoot">Add <span>"songs"</span> as a GET parameter to display all of the songs and their data</h1>
+        <h1 class="exampleHead">Response:</h1>
+        <div class="example">
+            <p class="exampleText">[{"id":1,"name":"Twenty One Pilots","most_popular_song":"Stressed Out","release_year":"2015"},{"id":2,"name":"Imagine Dragons","most_popular_song":"Believer","release_year":"2017"}, ...etc</p>
+        </div>
+    </div>
+    <div class="apiContainer">
+        <h1 class="exampleHeadTop">Searches Artist By Id:</h1>
+        <div class="example">
+            <p class="exampleText">http://localhost:5100/api/artists/1</p>
+        </div>
+        <h1 class="exampleFoot">Add a number such as <span>"1"</span> as a parameter to search and find the artist matching the given ID</h1>
+        <h1 class="exampleHead">Response:</h1>
+        <div class="example">
+            <p class="exampleText">{"id":1,"name":"Twenty One Pilots","albums":"7"}</p>
+        </div>
+    </div>
+    <div class="apiContainer">
+        <h1 class="exampleHeadTop">Searches Song By Id:</h1>
+        <div class="example">
+            <p class="exampleText">http://localhost:5100/api/song/1</p>
+        </div>
+        <h1 class="exampleFoot">Add a number such as <span>"1"</span> as a parameter to search and find the song matching the given ID</h1>
+        <h1 class="exampleHead">Response:</h1>
+        <div class="example">
+            <p class="exampleText">{"id":1,"name":"Twenty One Pilots","most_popular_song":"Stressed Out","release_year":"2015"}</p>
+        </div>
+    </div>
 </body>
 </html>
