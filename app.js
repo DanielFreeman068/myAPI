@@ -33,6 +33,9 @@ const saveSongs = (songs) => {
 //routes
 
 //index page
+app.get('/', (req, res) => {
+    res.redirect('/api')
+})
 app.get('/api/', (req,res) => {
     const songs = getSongs();
     const artists = getArtists();
