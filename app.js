@@ -3,7 +3,7 @@ var express = require('express');
 var app = express();
 const fs = require('fs');
 const bodyParser = require('body-parser');
-const PORT = 5100;
+const PORT = 5200;
 
 //public folder css and middleware
 app.use(bodyParser.urlencoded({ extended: true }));
