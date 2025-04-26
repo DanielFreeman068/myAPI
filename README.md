@@ -2,6 +2,10 @@
 
 This project is an API built using Node.js, Express, and with EJS for formatting. The index page is documentation for users to see how to navigate through the api while the admin page has delete, add, and edit functionality.
 
+## 📸 Preview
+
+![My API Screenshot](api.png)  
+
 ## Installation
 
 Install cd myAPI
